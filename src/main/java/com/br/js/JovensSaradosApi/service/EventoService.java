@@ -16,6 +16,6 @@ public class EventoService {
 
 
 	public List<Evento> getEventos() {
-		return repo.findAll();
+		return repo.getEventosAtivos();
 	}
 }

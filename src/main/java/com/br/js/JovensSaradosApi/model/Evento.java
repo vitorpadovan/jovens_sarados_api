@@ -17,23 +17,23 @@ import javax.persistence.Table;
 )
 public class Evento {
 
-	@Column(columnDefinition = "boolean")
+	@Column(columnDefinition = "boolean not null default true")
 	private Boolean ativo = true;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codEvento;
 
-	@Column(columnDefinition = "datetime")
+	@Column(columnDefinition = "datetime not null")
 	private Date dataEvento;
 
-	@Column(columnDefinition = "datetime")
+	@Column(columnDefinition = "datetime not null")
 	private Date dataPublicacao;
 
 	@Column(columnDefinition = "text")
 	private String detalheEvento;
 
-	@Column(columnDefinition = "varchar(150)", length = 150)
+	@Column(columnDefinition = "varchar(150) not null", length = 150)
 	private String evento;
 
 	@Column(columnDefinition = "datetime")
@@ -42,7 +42,7 @@ public class Evento {
 	@Column(columnDefinition = "varchar(500)", length = 500)
 	private String linkInscricao;
 
-	@Column(columnDefinition = "boolean")
+	@Column(columnDefinition = "boolean not null default false")
 	private Boolean obrigatorioInscricao = false;
 
 
