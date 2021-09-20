@@ -10,12 +10,12 @@ import com.br.js.JovensSaradosApi.repo.JpaEvento;
 
 @Service
 public class EventoService {
-	
+
 	@Autowired
 	private JpaEvento repo;
+
 
 	public List<Evento> getEventos() {
 		return repo.findAll();
 	}
-
 }

@@ -13,15 +13,13 @@ import com.br.js.JovensSaradosApi.service.EventoService;
 @RestController
 @RequestMapping("/api/evento")
 public class EventoController {
-	
+
 	@Autowired
 	private EventoService servico;
-	
-	@GetMapping
-	public List<Evento> eventos(){
-		return servico.getEventos();
-		
-	}
-	
 
+
+	@GetMapping
+	public List<Evento> eventos() {
+		return servico.getEventos();
+	}
 }

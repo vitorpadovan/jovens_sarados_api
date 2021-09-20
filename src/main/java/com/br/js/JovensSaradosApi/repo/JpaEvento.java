@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.br.js.JovensSaradosApi.model.Evento;
 
 @Repository
-public interface JpaEvento extends JpaRepository<Evento,Integer>{
-
+public interface JpaEvento extends JpaRepository<Evento, Integer> {
 }
