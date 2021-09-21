@@ -19,7 +19,7 @@ public class EventoController {
 
 
 	@GetMapping
-	public List<Evento> eventos() {
+	public List<Evento> getEventosAtivos() {
 		return servico.getEventos();
 	}
 }
