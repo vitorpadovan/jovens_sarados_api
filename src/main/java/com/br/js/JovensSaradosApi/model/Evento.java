@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(
 		indexes = { @Index(name = "unk_evento", columnList = "evento", unique = true),
-				@Index(name = "unk_dta_evento", columnList = "dataEvento", unique = true) }
+				@Index(name = "unk_dta_evento", columnList = "dataEvento") }
 )
 public class Evento {
 
@@ -35,6 +35,9 @@ public class Evento {
 
 	@Column(columnDefinition = "varchar(150) not null", length = 150)
 	private String evento;
+
+	@Column(columnDefinition = "varchar(255)", length = 150)
+	private String urlImagem;
 
 	@Column(columnDefinition = "datetime")
 	private Date limiteInscricao;
@@ -116,5 +119,13 @@ public class Evento {
 
 	public void setObrigatorioInscricao(Boolean obrigatorioInscricao) {
 		this.obrigatorioInscricao = obrigatorioInscricao;
+	}
+
+	public String getUrlImagem() {
+		return urlImagem;
+	}
+
+	public void setUrlImagem(String urlImagem) {
+		this.urlImagem = urlImagem;
 	}
 }
