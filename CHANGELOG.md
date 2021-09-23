@@ -4,3 +4,10 @@
 - Implementado apenas a leitura de eventos, não disponibilizado nenhum endpoint para o cadastro dos mesmos
 #### Change
 #### Fixed
+
+### [0.2.0] - 2021-09-23
+#### Add
+- Implementado eventos futuros, eventos ativos
+#### Change
+- Alterado endpoint de /api/evento para /api/eventos
+#### Fixed

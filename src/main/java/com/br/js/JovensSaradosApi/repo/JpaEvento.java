@@ -13,4 +13,7 @@ public interface JpaEvento extends JpaRepository<Evento, Integer> {
 
 	@Query("SELECT e FROM Evento e WHERE e.ativo = true")
 	List<Evento> getEventosAtivos();
+
+	@Query("SELECT e FROM Evento e WHERE e.ativo = true and e.dataEvento >= now()")
+	List<Evento> getEventosFuturos();
 }

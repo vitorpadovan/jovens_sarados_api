@@ -15,7 +15,11 @@ public class EventoService {
 	private JpaEvento repo;
 
 
-	public List<Evento> getEventos() {
+	public List<Evento> getEventosAtivos() {
 		return repo.getEventosAtivos();
+	}
+
+	public List<Evento> getEventosFuturos() {
+		return repo.getEventosFuturos();
 	}
 }
