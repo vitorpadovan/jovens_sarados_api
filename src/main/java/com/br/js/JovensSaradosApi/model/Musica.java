@@ -35,6 +35,12 @@ public class Musica {
 	@Column(columnDefinition = "varchar(255)", length = 255)
 	private String youtube;
 
+	@Column(columnDefinition = "varchar(255) not null", length = 255, nullable = false)
+	private String nomeIndicador;
+
+	@Column(columnDefinition = "varchar(50) not null", length = 255, nullable = false)
+	private String instaIndicador;
+
 	@Column(columnDefinition = "datetime not null")
 	private Date dataPublicacao;
 
@@ -96,5 +102,21 @@ public class Musica {
 
 	public void setDataAgendamento(Date dataAgendamento) {
 		this.dataAgendamento = dataAgendamento;
+	}
+
+	public String getNomeIndicador() {
+		return nomeIndicador;
+	}
+
+	public void setNomeIndicador(String nomeIndicador) {
+		this.nomeIndicador = nomeIndicador;
+	}
+
+	public String getInstaIndicador() {
+		return instaIndicador;
+	}
+
+	public void setInstaIndicador(String instaIndicador) {
+		this.instaIndicador = instaIndicador;
 	}
 }
