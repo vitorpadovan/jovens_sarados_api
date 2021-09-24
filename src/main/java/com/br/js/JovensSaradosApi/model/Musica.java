@@ -15,7 +15,7 @@ import javax.persistence.UniqueConstraint;
 @Table(
 		indexes = { @Index(name = "unk_artista", columnList = "artista"),
 				@Index(name = "unk_musica", columnList = "musica") }, uniqueConstraints = {
-						@UniqueConstraint(columnNames = { "artista", "musica" }) }
+						@UniqueConstraint(columnNames = { "artista", "musica" }, name = "artista_musica") }
 )
 public class Musica {
 
@@ -35,10 +35,10 @@ public class Musica {
 	@Column(columnDefinition = "varchar(255)", length = 255)
 	private String youtube;
 
-	@Column(columnDefinition = "varchar(255) not null", length = 255, nullable = false)
+	@Column(columnDefinition = "varchar(255)", length = 255, nullable = true)
 	private String nomeIndicador;
 
-	@Column(columnDefinition = "varchar(50) not null", length = 255, nullable = false)
+	@Column(columnDefinition = "varchar(50)", length = 255, nullable = true)
 	private String instaIndicador;
 
 	@Column(columnDefinition = "datetime not null")
@@ -46,6 +46,9 @@ public class Musica {
 
 	@Column(columnDefinition = "datetime not null")
 	private Date dataAgendamento;
+
+	@Column(columnDefinition = "int not null default 0")
+	private int tipoMusica;
 
 
 	public Integer getId() {
@@ -118,5 +121,13 @@ public class Musica {
 
 	public void setInstaIndicador(String instaIndicador) {
 		this.instaIndicador = instaIndicador;
+	}
+
+	public int getTipoMusica() {
+		return tipoMusica;
+	}
+
+	public void setTipoMusica(int tipoMusica) {
+		this.tipoMusica = tipoMusica;
 	}
 }
