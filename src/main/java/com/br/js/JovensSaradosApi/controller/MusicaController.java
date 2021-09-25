@@ -22,4 +22,9 @@ public class MusicaController {
 	public List<Musica> getMusicas() {
 		return servico.getMusicas();
 	}
+
+	@GetMapping("/comlink")
+	public List<Musica> getMusicaComLink() {
+		return servico.getMusicasComLink();
+	}
 }

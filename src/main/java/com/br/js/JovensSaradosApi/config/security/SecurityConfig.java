@@ -16,7 +16,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	private static final String[] PUBLIC_GET = { "/api/eventos/**", "/", "/api/musicas/**" };
+	private static final String[] PUBLIC_GET = { "/api/eventos/**", "/", "/api/musicas/**", "/api/musicas/comlink" };
 
 	private static final String[] PUBLIC_POST = {};
 

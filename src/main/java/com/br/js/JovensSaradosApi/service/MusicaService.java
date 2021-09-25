@@ -18,4 +18,8 @@ public class MusicaService {
 	public List<Musica> getMusicas() {
 		return repo.findAll();
 	}
+
+	public List<Musica> getMusicasComLink() {
+		return repo.getMusicasComLink();
+	}
 }
