@@ -9,5 +9,4 @@ class JovensSaradosApiApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
