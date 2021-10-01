@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -47,6 +49,10 @@ public class Evento {
 
 	@Column(columnDefinition = "boolean not null default false")
 	private Boolean obrigatorioInscricao = false;
+
+	@ManyToOne
+	@JoinColumn(name = "idMissao")
+	private Missao missao;
 
 
 	public Boolean getAtivo() {
@@ -127,5 +133,13 @@ public class Evento {
 
 	public void setUrlImagem(String urlImagem) {
 		this.urlImagem = urlImagem;
+	}
+
+	public Missao getMissao() {
+		return missao;
+	}
+
+	public void setMissao(Missao missao) {
+		this.missao = missao;
 	}
 }
