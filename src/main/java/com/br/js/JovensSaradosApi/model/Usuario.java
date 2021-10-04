@@ -6,6 +6,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -14,21 +16,27 @@ import javax.persistence.ManyToMany;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class Usuario implements UserDetails {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idUsuario;
 
+	@NotNull
+	@Column(length = 50, nullable = false, unique = true)
 	private String login;
 
+	@Column(length = 500, nullable = false)
 	private String senha;
 
 	@Column(columnDefinition = "date", nullable = false)
 	private Date dataValidade;
 
-	@Column(columnDefinition = "boolean default true", nullable = true)
-	private Boolean ativo;
+	@Column(columnDefinition = "boolean default true", nullable = false)
+	private Boolean ativo = true;
 
 	@ManyToMany
 	@JoinTable(
@@ -61,6 +69,30 @@ public class Usuario implements UserDetails {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public Date getDataValidade() {
+		return dataValidade;
+	}
+
+	public void setDataValidade(Date dataValidade) {
+		this.dataValidade = dataValidade;
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public Set<PerfilUsuario> getPerfils() {
+		return perfils;
+	}
+
+	public void setPerfils(Set<PerfilUsuario> perfils) {
+		this.perfils = perfils;
 	}
 
 	@Override

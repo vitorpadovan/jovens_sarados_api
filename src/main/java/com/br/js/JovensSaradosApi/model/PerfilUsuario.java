@@ -1,5 +1,6 @@
 package com.br.js.JovensSaradosApi.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class PerfilUsuario implements GrantedAuthority {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idPeril;
 
+	@Column(length = 50, nullable = false, unique = true)
 	private String perfil;
 
 
@@ -35,7 +37,6 @@ public class PerfilUsuario implements GrantedAuthority {
 
 	@Override
 	public String getAuthority() {
-		// TODO Auto-generated method stub
-		return null;
+		return perfil;
 	}
 }

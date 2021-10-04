@@ -16,6 +16,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.br.js.JovensSaradosApi.form.FormLogin;
 import com.br.js.JovensSaradosApi.model.Usuario;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -41,9 +42,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
 		try {
-			// TODO alterar para DtoLogin
-			Usuario creds = new ObjectMapper().readValue(request.getInputStream(), Usuario.class);
-			System.out.println(creds);
+			FormLogin creds = new ObjectMapper().readValue(request.getInputStream(), FormLogin.class);
 			UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(creds.getLogin(),
 					creds.getSenha(), new ArrayList<>());
 			Authentication auth = authenticationManager.authenticate(authToken);

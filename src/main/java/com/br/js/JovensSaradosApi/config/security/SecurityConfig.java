@@ -1,31 +1,47 @@
 package com.br.js.JovensSaradosApi.config.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import com.br.js.JovensSaradosApi.config.security.jwt.JWTAuthenticationFilter;
+import com.br.js.JovensSaradosApi.config.security.jwt.JWTAuthorizationFilter;
+import com.br.js.JovensSaradosApi.config.security.jwt.JWTUtil;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	private static final String[] PUBLIC_GET = { "/api/eventos/**", "/", "/api/musicas/**", "/api/musicas/comlink" };
+	@Autowired
+	private UserDetailsService userDetailsService;
 
-	private static final String[] PUBLIC_POST = {};
+	@Autowired
+	private JWTUtil jwtUtil;
+
+	private static final String[] PUBLIC_GET = { "/api/eventos/**", "/", "/api/musicas/**", "/api/musicas/comlink",
+			"/login/", "/dev" };
+
+	private static final String[] PUBLIC_POST = { "/dev" };
 
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable();
-		http.authorizeRequests().antMatchers(PUBLIC_GET).permitAll().antMatchers(PUBLIC_POST).permitAll().anyRequest()
-				.authenticated();
+		http.authorizeRequests().antMatchers(PUBLIC_GET).permitAll().antMatchers(HttpMethod.POST, PUBLIC_POST).permitAll()
+				.anyRequest().authenticated();
+		http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtUtil));
+		http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtUtil, userDetailsService));
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 
