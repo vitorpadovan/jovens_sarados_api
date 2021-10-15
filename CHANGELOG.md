@@ -17,3 +17,9 @@
 #### Change
 - Direitos de acesso as páginas encontra-se no banco e não mais na aplicação
 #### Fixed
+
+### [0.2.2] - 2021-10-15
+#### Add
+#### Change
+#### Fixed
+- Removido os dados de acesso aos servidores de banco de dados

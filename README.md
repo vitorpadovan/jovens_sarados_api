@@ -1,5 +1,5 @@
 # jovens_sarados_api
-## V. 0.2.1
+## V. 0.2.2
 [CHANGELOG](CHANGELOG.md)
 
 # Sobre este projeto
@@ -22,7 +22,11 @@ O arquivo [Direitos.sql](src/main/resources/Direitos.sql) está os direitos atua
 Alterar estes direitos por sua vez obriga reiniciar a aplicação por hora para funcionar.
 
 ## Variáveis de Ambiente
-
+- **API_DB_SERVER** - Servidor de banco de dados
+- **API_DB_PORT** - Porta para o servidor de banco de dados
+- **API_DB_NAME** - Nome do banco que será usado
+- **API_DB_USER** - Usuário do banco
+- **API_DB_PASSWD** - Senha para o banco de dados
 
 ## Referências
 - [Upload File](https://www.bezkoder.com/spring-boot-file-upload/)
