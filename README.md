@@ -1,6 +1,13 @@
 # jovens_sarados_api
-## V. 0.2.0
+## V. 0.2.1
 [CHANGELOG](CHANGELOG.md)
+
+# Sobre este projeto
+O Projeto Jovens Sarados Api que consta neste [Github](https://github.com/vitorpadovan) não representa a intenção da missão Jovens Sarados.
+Este projeto representa inicialmente a intenção de estudo de um servo do Jovens Sarados com a possível intenção futura de publicar, caso seja aprovado e autorizado por superiores da missão. A intenção de publicar esta aplicação não é a principal finalidade, e sim a intenção de estudar usando caso real que pode ser utilizado.
+O Projeto em questão está com configurações expostas. Estas configurações por sua vez é referente a um servidor que pode ser mudado a qualquer momento, e os dados contidos neles não são dados senssíveis e são dados públicos e dados para testes também. Estas configurações estão propositalmente assim pois ainda não foi possível configurar o Docker corretamente no servidor de destino para usar variáveis de ambiente, e o mesmo está rodando em docker no servidor, por ser uma versão mais leve para publicação.
+Este projeto por sua vez possui um App que está em desenvolvimento também, e que se encontra neste mesmo github. [Github](https://github.com/vitorpadovan/jovens_sarados_app)
+
 
 ## Login
 http://<ip_destino>/login
