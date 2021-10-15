@@ -18,6 +18,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import com.br.js.JovensSaradosApi.config.security.jwt.JWTAuthenticationFilter;
 import com.br.js.JovensSaradosApi.config.security.jwt.JWTAuthorizationFilter;
 import com.br.js.JovensSaradosApi.config.security.jwt.JWTUtil;
+import com.br.js.JovensSaradosApi.service.DireitoPaginaService;
 
 @Configuration
 @EnableWebSecurity
@@ -29,17 +30,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private JWTUtil jwtUtil;
 
-	private static final String[] PUBLIC_GET = { "/api/eventos/**", "/", "/api/musicas/**", "/api/musicas/comlink",
-			"/login/", "/dev" };
-
-	private static final String[] PUBLIC_POST = { "/dev" };
+	@Autowired
+	private DireitoPaginaService servicoDePermissoes;
 
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable();
-		http.authorizeRequests().antMatchers(PUBLIC_GET).permitAll().antMatchers(HttpMethod.POST, PUBLIC_POST).permitAll()
-				.anyRequest().authenticated();
+		http = servicoDePermissoes.adicionarDireitos(http, HttpMethod.GET);
+		http = servicoDePermissoes.adicionarDireitos(http, HttpMethod.POST);
+		http.authorizeRequests().anyRequest().authenticated();
 		http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtUtil));
 		http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtUtil, userDetailsService));
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

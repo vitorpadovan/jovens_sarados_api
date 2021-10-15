@@ -1,0 +1,11 @@
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('1','GET',NULL,NULL,'/api/eventos/**');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('2','GET',NULL,NULL,'/llllll');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('3','GET',NULL,NULL,'/api/musicas/**');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('4','GET',NULL,NULL,'/api/musicas/comlink');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('5','GET',NULL,NULL,'/login/');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('6','GET',NULL,NULL,'/api/files/upload');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('7','GET',NULL,NULL,'/api/files/**');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('8','GET',NULL,NULL,'/dev');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('9','POST',NULL,NULL,'/dev');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('10','POST',NULL,NULL,'/api/files/**');
+insert into `DireitoPagina` (`idDireitoPagina`, `metodo`, `idPeril`, `idUsuario`, `pagina`) values('11','POST',NULL,NULL,'/api/files/upload');

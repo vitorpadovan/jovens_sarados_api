@@ -11,3 +11,9 @@
 #### Change
 - Alterado endpoint de /api/evento para /api/eventos
 #### Fixed
+
+### [0.2.1] - 2021-10-14
+#### Add
+#### Change
+- Direitos de acesso as páginas encontra-se no banco e não mais na aplicação
+#### Fixed

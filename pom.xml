@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.br.js</groupId>
 	<artifactId>JovensSaradosApi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.2.1</version>
 	<name>JovensSaradosApi</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
