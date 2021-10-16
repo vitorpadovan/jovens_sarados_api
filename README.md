@@ -32,10 +32,16 @@ Alterar estes direitos por sua vez obriga reiniciar a aplicação por hora para 
 - [Upload File](https://www.bezkoder.com/spring-boot-file-upload/)
 
 ### Cursos
+
+#### Alura
 - [Injeção de dependências: O que é?](https://cursos.alura.com.br/injecao-de-dependencias-o-que-e--c224)
 - [Spring Data JPA: Repositórios, Consultas, Projeções e Specifications](https://cursos.alura.com.br/course/spring-data-jpa)
 - [Spring Boot API REST: Construa uma API](https://cursos.alura.com.br/course/spring-boot-api-rest)
 - [Spring Boot API Rest: Segurança da API, Cache e Monitoramento](https://cursos.alura.com.br/course/spring-boot-seguranca-cache-monitoramento)
 - [Spring Boot e Teste: Profiles, Testes e Deploy](https://cursos.alura.com.br/course/spring-boot-profiles-testes-deploy)
 - [Maven: Gerenciamento de dependências e build de aplicações Java](https://cursos.alura.com.br/course/maven-gerenciamento-dependencias-build-aplicacoes-java)
+
+#### Udemy
 - [Spring Boot, Hibernate, REST, Ionic, JWT, S3, MySQL, MongoDB](https://www.udemy.com/course/spring-boot-ionic/)
+- [Spring Boot Ionic Backend - Nelio Alves](https://github.com/acenelio/spring-boot-ionic-backend)
+- [Spring Boot 2 Ionic Backend - Nelio Alves](https://github.com/acenelio/springboot2-ionic-backend)
